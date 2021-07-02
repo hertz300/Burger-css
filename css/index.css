@@ -1,0 +1,136 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0; }
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+:focus, :active {
+  outline: none; }
+
+a:focus, a:active {
+  outline: none; }
+
+nav, footer, header, aside {
+  display: block; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+input, button, textarea {
+  font-family: inherit; }
+
+input::-ms-clear {
+  display: none; }
+
+button {
+  cursor: pointer; }
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+a, a:visited {
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: none; }
+
+ul li {
+  list-style: none; }
+
+img {
+  vertical-align: top; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400; }
+
+/*--------------------*/
+
+.wrapper{
+  margin: 200px auto;
+  width: 320px;
+  height: 40px;
+  background-color: #000;
+  position: relative;
+  color: #fff;
+  text-align: center;
+  font-family: 'Arial';
+}
+#check-menu{
+  display: none; /*спрятал чекбокс*/
+}
+label{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 2;
+  line-height: 40px;
+}
+.burger-line{
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 35px;
+  height: 2px;
+  background-color: #fff;
+  transition: .6s all;
+}
+.mod2, .mod3{
+  top: 18px;
+}
+.mod4{
+  top: 28px;
+}
+.main-menu{
+  display: block;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+  max-height: 0;
+  font-size: 0;
+  overflow: hidden;
+  transition: .5s all; /*плавное появление бургера*/
+}
+a{
+  display: block;
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  border-top: 1px solid  rgba(255,255,255,.3);
+  background-color: #000;
+}
+#check-menu:checked ~ .main-menu{
+  max-height: 500px;
+  font-size: 16px;
+}
+/*делаем крестик*/
+#check-menu:checked ~ .mod1{
+  display: none;
+}
+#check-menu:checked ~ .mod2{
+  transform: rotate(45deg);
+}
+#check-menu:checked ~ .mod3{
+  transform: rotate(-45deg);
+}
+#check-menu:checked ~ .mod4{
+  display: none;
+}
